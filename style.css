@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    padding-top: 50px;
+}
+
+#title1 {
+    text-align: center;
+}
+
+main p:first-of-type,
+#select_mood {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+#moods i {
+    font-size: 30px;
+    cursor: pointer;
+    margin-left: 12px;
+    margin-top: 10px;
+}
+
+.fa-laugh {
+    color: #2d6a5e;
+}
+
+.fa-smile {
+    color: #83e7b0;
+}
+
+.fa-meh {
+    color: #e0f5c9;
+}
+
+.fa-frown {
+    color: #efc6a5;
+}
+
+.fa-sad-tear {
+    color: #ea3d36;
+}
+
+#click_circle {
+    margin-top: 10px;
+}
+
+#months {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.weekdays,
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 40px);
+    text-align: center;
+    margin-left: 100px;
+}
+
+.weekday,
+.day {
+    font-size: 13px;
+    padding: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.month {
+    margin-top: 20px;
+    text-align: center;
+
+}
+
+#name_month {
+    margin-bottom: 10px;
+    font-size: 22px;
+    margin-top: 20px;
+}
+
+.icon1 {
+    background-color: #2d6a5e;
+    color: white;
+    border-radius: 50%;
+}
+.icon2 {
+    background-color: #83e7b0;
+    color: white;
+    border-radius: 50%;
+}
+.icon3 {
+    background-color: #e0f5c9;
+    color: white;
+    border-radius: 50%;
+}
+.icon4 {
+    background-color: #efc6a5;
+    color: white;
+    border-radius: 50%;
+}
+.icon5 {
+    background-color: #ea3d36;
+    color: white;
+    border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+    main {
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+    }
+    #months {
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .weekdays,
+.days {
+    margin-left: 60px;
+}
+#title1 {
+    font-size: 22px;
+}
+ }
+
