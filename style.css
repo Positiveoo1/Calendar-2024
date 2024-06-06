@@ -134,3 +134,14 @@ main p:first-of-type,
 }
  }
 
+
+ .resetBtn {
+    padding: 9px 12px;
+    border-radius: 12px;
+    border: none;
+    background-color: dodgerblue;
+    color: #fff;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+ }

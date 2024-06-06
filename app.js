@@ -6,6 +6,11 @@ const icon5 = document.querySelector('.fa-sad-tear');
 
 const icons = [icon1, icon2, icon3, icon4, icon5];
 
+// Load moods from local storage on page load
+document.addEventListener('DOMContentLoaded', () => {
+    loadMoods();
+});
+
 for (let i = 0; i < icons.length; i++) {
     icons[i].addEventListener('click', function () {
         for (let j = 0; j < icons.length; j++) {
@@ -31,5 +36,47 @@ for (let i = 0; i < days.length; i++) {
                 days[i].classList.add('icon' + (k + 1));
             }
         }
+        saveMoods();
     });
 }
+
+// Save moods to local storage
+function saveMoods() {
+    const moods = {};
+    days.forEach((day, index) => {
+        for (let i = 0; i < icons.length; i++) {
+            if (day.classList.contains('icon' + (i + 1))) {
+                moods[index] = 'icon' + (i + 1);
+            }
+        }
+    });
+    localStorage.setItem('moods', JSON.stringify(moods));
+}
+
+// Load moods from local storage
+function loadMoods() {
+    const savedMoods = localStorage.getItem('moods');
+    if (savedMoods) {
+        const moods = JSON.parse(savedMoods);
+        Object.keys(moods).forEach(index => {
+            days[index].classList.add(moods[index]);
+        });
+    }
+}
+
+// Reset all moods
+function resetMoods() {
+    days.forEach(day => {
+        for (let i = 0; i < icons.length; i++) {
+            day.classList.remove('icon' + (i + 1));
+        }
+    });
+    localStorage.removeItem('moods');
+}
+
+// Add reset button functionality
+const resetButton = document.createElement('button');
+resetButton.textContent = 'Reset';
+resetButton.classList.add('resetBtn');
+resetButton.addEventListener('click', resetMoods);
+document.body.appendChild(resetButton);
